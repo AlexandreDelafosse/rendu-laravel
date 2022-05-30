@@ -1,5 +1,7 @@
 @extends('layouts.layout')
 
-@section('main')
+<section class="main">
+
+</section>
 
 @endsection

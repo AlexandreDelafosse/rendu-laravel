@@ -10,7 +10,7 @@
             {{ $category->id}} / {{$category->title}}
 
 
-            <img src="{{ asset('img/') }}/{{$category->img}}" >
+            <img src="{{ asset('img/') }}/{{$category->img}}" class="imgcategory">
             <br>
 
             <a href="{{ route ('category.show', ['category' => $category->id])   }}"> Voir </a>

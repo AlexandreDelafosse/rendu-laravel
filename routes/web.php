@@ -24,6 +24,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::resource('category', CategoryController::class);
 
-Route::resource('panier', PanierController::class);
+/* Route::resource('panier', PanierController::class); */
 
 Route::resource('product', ProductController::class);
