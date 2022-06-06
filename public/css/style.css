@@ -1,3 +1,54 @@
 .imgcategory{
-    width: 150px;
+    width: 200px;
+}
+
+.imgproduct{
+    width: 250px;
+}
+
+.divcategories{
+    width: 30%;
+    box-shadow: 0 0 17px 0 rgb(29 29 27 / 24%);
+    padding: 15px;
+    margin: 5px;
+    list-style: none;
+}
+
+.imgidcategories{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.containercategories{ 
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.categoriesbouton{
+    background: black;
+    color: red;
+    padding: 10px;
+    margin-right: 5px;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+.nav-item{
+    list-style: none;
+}
+
+.nav-link, .btn-btn-info{
+    text-decoration: none;
+    background: black;
+    color: red;
+    padding: 10px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.nav-link:hover, .categoriesbouton:hover, .btn-btn-info:hover{
+    background: red;
+    color: black;
+    transition: 0.3s;
 }

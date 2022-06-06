@@ -3,19 +3,20 @@
 @section('main')
 <div class="container main">
     <h1>Categories</h1>
-    <ul>
+    <ul class="containercategories">
 @foreach ($categorie as $category)
 
-        <li>
-            {{ $category->id}} / {{$category->title}}
+        <li class="divcategories">
+            <div class="imgidcategories">
+                <img src="{{ asset('img/Berserk.jpg') }}" class="imgcategory">
 
-
-            <img src="{{ asset('img/') }}/{{$category->img}}" class="imgcategory">
+                <p> {{ $category->id}} / {{$category->title}} </p>
+            </div>
             <br>
 
-            <a href="{{ route ('category.show', ['category' => $category->id])   }}"> Voir </a>
+            <a href="{{ route ('category.show', ['category' => $category->id])   }}" class="categoriesbouton"> Voir </a>
 
-            <a href="{{ route ('category.edit', ['category' => $category->id])   }}"> Editer </a>
+            <a href="{{ route ('category.edit', ['category' => $category->id])   }}" class="categoriesbouton"> Editer </a>
 
         </li>
 <br>

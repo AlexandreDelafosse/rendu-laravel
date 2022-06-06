@@ -14,13 +14,6 @@
         'method' => 'GET'
     ]) !!}
 
-    {!! Form::select('filtre', [
-        'Up' => 'Prix Montant',
-        'Down' => 'Prix Descendant',
-    ]) !!}
-
-    {!! Form::submit('Filtrer') !!}
-
     {!! Form::close() !!}
 
 

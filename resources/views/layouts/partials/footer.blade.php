@@ -1,7 +1,17 @@
   <!-- footer section -->
   <footer class="footer_section">
-    <div class="container">
-    </div>
+  <div class="container">
+      <nav class="navbar navbar-expand-lg custom_nav-container bg-white border-b border-gray-100">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav  ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link-footer" href="/">Accueil <span class="sr-only"></span></a>
+              <a class="nav-link-footer" href="{{ route('dashboard') }}">Dashboard <span class="sr-only"></span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>  
   </footer>
   <!-- footer section -->
 

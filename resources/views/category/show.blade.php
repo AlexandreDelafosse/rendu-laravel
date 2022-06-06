@@ -6,20 +6,6 @@
 
     <h2> {{ $categories->title }} </h2>
 
-    {!! Form::open([
-        'route' => ['category.show', $categories->id],
-        'method' => 'GET'
-    ]) !!}
-
-    {!! Form::select('filtre', [
-        'Up' => 'Prix Montant',
-        'Down' => 'Prix Descendant',
-    ]) !!}
-
-    {!! Form::submit('Filtrer') !!}
-
-    {!! Form::close() !!}
-
 
     <a href="{{ route('category.index') }}" class="btn-btn-info"> </a>
 
@@ -33,7 +19,7 @@
         <br>
         <br>
 
-        <img src="{{ asset('img/') }}/{{$products->src}}" >
+        <img src="{{ asset('img/') }}/{{$products->src}}" class="imgproduct">
         <br>
         <a href="{{ route ('product.show', ['product' => $products->id])   }}"> Voir </a>
         <a href="{{ route ('product.edit', ['product' => $products->id])   }}"> Editer </a>
@@ -41,6 +27,8 @@
     </li>
 
 @endforeach
+
+<a href="{{route('product.create') }}" class="btn-btn-info"> Ajouter un produit </a>
 
 </div>
 @endsection

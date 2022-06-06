@@ -8,11 +8,11 @@
     'route' => ['product.update', $product->id],'method' => 'PUT'
     ]) !!}
 
-    {!! Form::label('title', 'Titre du produit') !!}
+    {!! Form::label('title', 'Changer de catégorie') !!}
 
-    {!! Form::text('title', $product->title, ['placeholder' => 'title product']) !!}
+    {!! Form::text('title', $product->title, ['placeholder' => 'Catégorie']) !!}
 
-    {!! Form::submit('Envoyer') !!}
+    {!! Form::submit('Changer') !!}
 
     {!! Form::close() !!}
 

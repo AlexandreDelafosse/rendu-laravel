@@ -10,7 +10,7 @@
             {{ $product->id}} / {{$product->title}}
 
 
-            <img src="{{ asset('img/') }}/{{$product->img}}" class="imgproduct">
+            <img src="{{ asset('img/Berserkproduct.jpg') }}" class="imgproduct">
             <br>
 
             <a href="{{ route ('product.show', ['product' => $product->id])   }}"> Voir </a>
