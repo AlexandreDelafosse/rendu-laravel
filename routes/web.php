@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PanierController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,5 @@ Route::resource('category', CategoryController::class);
 /* Route::resource('panier', PanierController::class); */
 
 Route::resource('product', ProductController::class);
+
+Route::resource('post', PostController::class);

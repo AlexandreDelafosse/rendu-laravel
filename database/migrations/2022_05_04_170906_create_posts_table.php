@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Category;
+use App\Models\User;
 
 return new class extends Migration
 {
@@ -16,16 +18,17 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->char('title', 50);
-            $table->char('subtitle', 50);
-            $table->text('description');
-            $table->dateTime('date_de_publication');
-            $table->boolean('confirmed');
+            $table->string('title');
+            $table->text('content');
+            $table->string('image');
+
+            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(Category::class);
         });
 
-        Schema::table('posts', function (Blueprint $table) {
+       /* Schema::table('posts', function (Blueprint $table) {
             $table->foreignId('users_id')->constrained('users');
-        });
+        }); */
     }
 
     /**
@@ -37,6 +40,6 @@ return new class extends Migration
     {
         
         Schema::dropIfExists('posts');
-        Schema::disableForeignKeyConstraints();
+        
     }
 };

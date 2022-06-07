@@ -7,6 +7,7 @@
             <li class="nav-item active">
               <a class="nav-link" href="/">Accueil <span class="sr-only"></span></a>
               <a class="nav-link" href="{{ route('dashboard') }}">Dashboard <span class="sr-only"></span></a>
+              <a class="nav-link" href="{{ route('login') }}">Connexion <span class="sr-only"></span></a>
             </li>
           </ul>
         </div>

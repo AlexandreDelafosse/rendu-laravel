@@ -7,6 +7,9 @@
             <li class="nav-item active">
               <a class="nav-link-footer" href="/">Accueil <span class="sr-only"></span></a>
               <a class="nav-link-footer" href="{{ route('dashboard') }}">Dashboard <span class="sr-only"></span></a>
+              <a class="nav-link-footer" href="{{ route('login') }}">Connexion <span class="sr-only"></span></a>
+              <a class="nav-link-footer" href="{{ route('register') }}">Inscription <span class="sr-only"></span></a>
+
             </li>
           </ul>
         </div>
