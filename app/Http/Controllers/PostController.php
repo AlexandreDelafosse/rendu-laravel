@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Http\Requests\StorePostRequest;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,9 +17,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('category')->get();
+        $posts = Post::with('category')->latest()->get();
         
-        return view('post.index', \compact('posts'));
+        return view('post.index', compact('posts'));
     }
 
     /**
@@ -27,7 +29,11 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+
+        return view('post.create', compact('categories'));
+
+
     }
 
     /**
@@ -36,9 +42,16 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
-        //
+
+            $posts = new Post;
+            $input = $request->input();
+    
+            $posts->fill($input)->save();
+    
+            return redirect()->route('post.index')->with('success', 'Votre post à été créé');
+        
     }
 
     /**
@@ -49,7 +62,11 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $posts = Post::findorFail($id);
+
+        $post = DB::table('posts')->where('title', $posts->id)->get();
+
+        return view('post.show', compact('posts', 'post'));
     }
 
     /**
@@ -60,7 +77,11 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $categories = Category::all();
+        $post = Post::findorFail($id);
+
+        return view('post.edit', compact('post', 'categories'));
     }
 
     /**
@@ -72,7 +93,11 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $input = $request->input();
+        $post->fill($input)->save();
+
+        return redirect()->route('post.index');
     }
 
     /**
@@ -81,8 +106,12 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id )
     {
-        //
+
+        $post = Post::findorFail($id);
+        $post->delete();
+
+        return redirect()->route('post.index');
     }
 }

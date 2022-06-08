@@ -7,8 +7,26 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
+            @if(session('success'))
+
+            {{ session('success') }}
+
+            @endif
+            
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-jet-welcome />
+                @foreach ( $posts as $post)
+                <div>
+                    <a href="{{ route('post.edit', $post) }}"  > Editer </a> {{ $post->title}} 
+
+                    {!! Form::open([
+                    'route' => ['post.destroy', $post->id],'method' => 'DELETE' ]) !!} 
+
+                    {!! Form::submit('Supprimer un post') !!}
+
+                    {!! Form::close() !!}
+                </div>
+                @endforeach
             </div>
         </div>
     </div>

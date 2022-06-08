@@ -13,16 +13,14 @@
 
 			<p> {{ $post->created_at->format ('d M Y') }} </p>
 
-			<p> {{ $post->category->title}} </p>  
+			<p> {{ $post->category?->title}} </p>  
 
 			<p> {{ Str::limit($post->content, 120)}} </p>
 
-			<p> {{ $post->user->name}}</p>
+			<p> {{ $post->user?->name}}</p>
 			<br>
 
-			<a href="{{ route ('post.show', ['post' => $post->id])   }}"> Voir </a>
-
-			<a href="{{ route ('post.edit', ['post' => $post->id])   }}"> Editer </a>
+			<a href="{{ route ('post.show', ['post' => $post->id])   }}"> Voir plus</a>
 
 		</li>
 <br>

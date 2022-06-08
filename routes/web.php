@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PanierController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PostController;
@@ -30,3 +31,11 @@ Route::resource('category', CategoryController::class);
 Route::resource('product', ProductController::class);
 
 Route::resource('post', PostController::class);
+
+Route::middleware(['auth'])->group(function () {
+    
+    Route::resource('post', PostController::class)
+    ->except('index');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+});
