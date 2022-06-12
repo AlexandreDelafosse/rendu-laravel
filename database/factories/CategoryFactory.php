@@ -22,7 +22,6 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-         /*   'title' => $this->faker->title, */
             'title' => $this->faker->sentence(rand(1, 3), true),
             'img' => 'Berserk2.jpg',
         ];

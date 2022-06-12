@@ -111,6 +111,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
+        
         $category = Category::findorFail($id);
         $category->delete();
 

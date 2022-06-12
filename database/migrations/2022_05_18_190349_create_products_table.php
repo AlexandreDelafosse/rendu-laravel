@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('stock');
             $table->string('prix');
             $table->timestamps();
+
         });
 
         Schema::table('products', function (Blueprint $table) {

@@ -7,6 +7,7 @@ use App\Http\Requests\StorePostRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class PostController extends Controller
 {
@@ -32,7 +33,6 @@ class PostController extends Controller
         $categories = Category::all();
 
         return view('post.create', compact('categories'));
-
 
     }
 
@@ -108,10 +108,10 @@ class PostController extends Controller
      */
     public function destroy($id )
     {
-
         $post = Post::findorFail($id);
+
         $post->delete();
 
-        return redirect()->route('post.index');
+        return redirect()->route('dashboard')->with('success', 'Votre post a été supprimé');
     }
 }

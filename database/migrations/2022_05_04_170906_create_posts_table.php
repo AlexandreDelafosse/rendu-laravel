@@ -22,8 +22,8 @@ return new class extends Migration
             $table->text('content');
             $table->string('image');
 
-            $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Category::class);
+            $table->foreignIdFor(User::class)->onDelete('cascade');
+            $table->foreignIdFor(Category::class)->onDelete('cascade');
         });
 
        /* Schema::table('posts', function (Blueprint $table) {
@@ -38,8 +38,8 @@ return new class extends Migration
      */
     public function down()
     {
-        
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('posts');
-        
+        Schema::enableForeignKeyConstraints();
     }
 };
