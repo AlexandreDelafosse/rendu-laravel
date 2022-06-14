@@ -22,8 +22,8 @@ return new class extends Migration
             $table->text('content');
             $table->string('image');
 
-            $table->foreignIdFor(User::class)->onDelete('cascade');
-            $table->foreignIdFor(Category::class)->onDelete('cascade');
+            $table->foreignIdFor(User::class)->onDelete('cascade')->nullable();
+            $table->foreignIdFor(Category::class)->onDelete('cascade')->nullable();
         });
 
        /* Schema::table('posts', function (Blueprint $table) {

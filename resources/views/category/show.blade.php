@@ -6,9 +6,6 @@
 
     <h2> {{ $categories->title }} </h2>
 
-
-    <a href="{{ route('category.index') }}" class="btn-btn-info"> </a>
-
     @foreach ($product as $products)
 
     <li>
@@ -27,8 +24,9 @@
     </li>
 
 @endforeach
-
-<a href="{{route('product.create') }}" class="btn-btn-info"> Ajouter un produit </a>
-
 </div>
+<a href="{{route('product.create') }}" class="btn-btn-info"> Ajouter un produit </a>
+<a href="{{ route('category.index') }}" class="btn-btn-info"> Retourner aux catégories</a>
+
+
 @endsection

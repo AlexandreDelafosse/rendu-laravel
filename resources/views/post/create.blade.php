@@ -13,23 +13,23 @@
         ]) !!}  
 
         @csrf
-
+        <div class="contenteditspacing">
         {!! Form::label('title', 'Titre de l\'article') !!}
         {!! Form::text('title', null, ['placeholder' => 'title post']) !!}
-
+        </div>
+        <div class="contenteditspacing">
         {!! Form::label('content', 'Contenu de l\'article') !!}
         {!! Form::textarea('content', null, ['placeholder' => 'contenu du post']) !!}
-
-        {!! Form::label('image', 'Image de l\'article') !!}
-        {!! Form::file('image', null, ['placeholder' => 'image post']) !!}
-
+        </div>
+        <div class="contenteditspacing">
+        {!! Form::label('category', 'Categorie de l\'article') !!}
         <select name="category" id="category">
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}"> {{ $category->title}} </option>
             @endforeach
         </select>
         {!! Form::submit('Envoyer') !!}
-
+        </div>
 {!! Form::close() !!}
 	
 </div>

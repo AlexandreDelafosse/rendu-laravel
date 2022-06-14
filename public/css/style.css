@@ -1,3 +1,11 @@
+.main{
+    padding-bottom: 50px;
+}
+
+.navbar-nav{
+    padding: 0;
+}
+
 .imgcategory{
     width: 200px;
 }
@@ -47,8 +55,28 @@
     margin-top: 5px;
 }
 
+.nav-link-footer{
+    text-decoration: none;
+    background: red;
+    color: black;
+    padding: 10px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.nav-link-footer:hover{
+    background: black;
+    color: red;
+    transition: 0.3s;
+}
+
 .nav-link:hover, .categoriesbouton:hover, .btn-btn-info:hover{
     background: red;
     color: black;
     transition: 0.3s;
+}
+
+.contenteditspacing{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

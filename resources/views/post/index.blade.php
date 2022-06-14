@@ -8,9 +8,6 @@
 		<li>
 			{{ $post->id}} / {{$post->title}}
 
-
-			<img src="{{ asset('img/Berserkpost.jpg') }}" class="imgpost">
-
 			<p> {{ $post->created_at->format ('d M Y') }} </p>
 
 			<p> {{ $post->category?->title}} </p>  

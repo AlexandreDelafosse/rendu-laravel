@@ -8,10 +8,10 @@
     {!! Form::open([
         'route' => 'category.store','method' => 'POST'
         ]) !!}
-
+        <div class="contenteditspacing">
         {!! Form::label('title', 'Titre de la catégorie') !!}
         {!! Form::text('title', null, ['placeholder' => 'title catégorie']) !!}
-
+        </div>
         {!! Form::submit('Envoyer') !!}
 
 {!! Form::close() !!}

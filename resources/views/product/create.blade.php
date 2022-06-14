@@ -8,10 +8,10 @@
     {!! Form::open([
         'route' => 'product.store','method' => 'POST'
         ]) !!}
-
+        <div class="contenteditspacing">
         {!! Form::label('title_product', 'Titre du produit') !!}
         {!! Form::text('title_product', null, ['placeholder' => 'title product']) !!}
-
+        </div>
         {!! Form::submit('Envoyer') !!}
 
 {!! Form::close() !!}

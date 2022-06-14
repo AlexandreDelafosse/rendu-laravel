@@ -61,14 +61,6 @@ class CategoryController extends Controller
 
 
 
-        // $request
-        // if ($request['filtre'] === 'Down') {
-        //     $product = DB::table('products')->where('title', $id)->orderBy('prix', 'DESC')->get();
-        // } else {
-        //     $product = DB::table('products')->where('title', $id)->orderBy('prix', 'ASC')->get();
-        // }
-
-
         $product = DB::table('products')->where('title', $categories->id)->get();
 
         return view('category.show', compact('categories', 'product'));

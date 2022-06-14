@@ -7,11 +7,10 @@
     {!! Form::open([
     'route' => ['category.update', $category->id],'method' => 'PUT'
     ]) !!}
-
+    <div class="contenteditspacing">
     {!! Form::label('title', 'Titre de la catégorie') !!}
-
     {!! Form::text('title', $category->title, ['placeholder' => 'title catégorie']) !!}
-
+    </div>
     {!! Form::submit('Envoyer') !!}
 
     {!! Form::close() !!}
