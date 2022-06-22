@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Post;
+use Illuminate\Support\Facades\DB;
 
 
 /**
@@ -29,6 +30,8 @@ class PostFactory extends Factory
             'title' => $this->faker->sentence(rand(5, 10)),
             'content' => $this->faker->sentences(5, true),
             'image' => 'Berserk.jpg',
+            'user_id' => DB::table('users')->get('id')->random(1)->first()->id,
+            'category_id' => DB::table('categories')->get('id')->random(1)->first()->id,
         ];
     }
 }

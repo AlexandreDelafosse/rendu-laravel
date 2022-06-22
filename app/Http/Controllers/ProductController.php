@@ -55,7 +55,7 @@ class ProductController extends Controller
     {
         $products = Product::findorFail($id);
 
-        $product = DB::table('products')->where('title', $products->id)->get();
+        $product = DB::table('products')->where('category_id', $products->id)->get();
 
         return view('product.show', compact('products', 'product'));
     }

@@ -29,7 +29,7 @@ class ProductFactory extends Factory
             'src' => 'Berserkproduct.jpg',
             'stock' => rand(0, 500),
             'prix' => rand(0, 100),
-            'title' => DB::table('categories')->get('id')->random(1)->first()->id,
+            'category_id' => DB::table('categories')->get('id')->random(1)->first()->id,
         ];
     }
 }

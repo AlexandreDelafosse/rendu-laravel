@@ -61,7 +61,7 @@ class CategoryController extends Controller
 
 
 
-        $product = DB::table('products')->where('title', $categories->id)->get();
+        $product = DB::table('products')->where('category_id', $categories->id)->get();
 
         return view('category.show', compact('categories', 'product'));
     }
