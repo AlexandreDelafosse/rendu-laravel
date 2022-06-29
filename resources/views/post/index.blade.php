@@ -17,7 +17,7 @@
 			<p> {{ $post->user?->name}}</p>
 			<br>
 
-			<a href="{{ route ('post.show', ['post' => $post->id])   }}"> Voir plus</a>
+			<a href="{{ route ('post.show', ['post' => $post->id])   }}"  class="btn-btn-info"> Voir plus</a>
 
 		</li>
 <br>

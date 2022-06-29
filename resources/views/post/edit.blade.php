@@ -16,13 +16,16 @@
     {!! Form::label('content', 'Contenu de l\'article') !!}
     {!! Form::textarea('content', null, ['placeholder' => 'contenu du post']) !!}
     </div>
+
     <div class="contenteditspacing">
+    {!! Form::label('catégorie', null, ['placeholder' => 'changement de categories']) !!}
     <select name="category" id="category">
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}" {{ $post->category_id === $category->id ? 'selected' : ''}}> {{ $category->title}} </option>
             @endforeach
     </select>
     </div>
+
     {!! Form::submit('Envoyer') !!}
 
     {!! Form::close() !!}

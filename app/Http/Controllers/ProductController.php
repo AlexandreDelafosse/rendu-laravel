@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
@@ -26,6 +27,7 @@ class ProductController extends Controller
      */
     public function create()
     {
+
         return view('product.create');
     }
 
@@ -68,9 +70,10 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::all();
         $product = Product::findorFail($id);
 
-        return view('product.edit', compact('product'));
+        return view('product.edit', compact('product', 'categories'));
     }
 
     /**

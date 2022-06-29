@@ -10,9 +10,9 @@
         ]) !!}
         <div class="contenteditspacing">
         {!! Form::label('title', 'Titre de la catégorie') !!}
-        {!! Form::text('title', null, ['placeholder' => 'title catégorie']) !!}
+        {!! Form::text('title', null, ['placeholder' => 'titre de la catégorie']) !!}
         </div>
-        {!! Form::submit('Envoyer') !!}
+        {!! Form::submit('Créer votre catégorie') !!}
 
 {!! Form::close() !!}
 </div>

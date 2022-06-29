@@ -9,15 +9,11 @@
     <p> {{ $products->description }} </p>
     <p> {{ $products->prix }} € </p>
 
-    {!! Form::open([
-        'route' => ['product.show', $products->id],
-        'method' => 'GET'
-    ]) !!}
 
     {!! Form::close() !!}
 
 
-    <a href="{{ route('product.index') }}" class="btn-btn-info"> </a>
+    <a href="{{ route('product.index') }}" class="btn-btn-info">Retour aux produits </a>
 
 </div>
 @endsection

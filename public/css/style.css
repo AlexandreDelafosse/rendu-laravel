@@ -1,3 +1,15 @@
+li{
+    list-style: none;
+}
+
+.contentdashboardposts{
+    padding: 25px !important;
+}
+
+.productbuttons{
+    margin-top: 25px;
+}
+
 .main{
     padding-bottom: 50px;
 }
@@ -35,7 +47,7 @@
 
 .categoriesbouton{
     background: black;
-    color: red;
+    color: white;
     padding: 10px;
     margin-right: 5px;
     margin-top: 5px;
@@ -49,31 +61,38 @@
 .nav-link, .btn-btn-info{
     text-decoration: none;
     background: black;
-    color: red;
+    color: white;
     padding: 10px;
     margin-right: 5px;
     margin-top: 5px;
+}
+
+.btn-btn-info-posts{
+    text-decoration: none;
+
 }
 
 .nav-link-footer{
     text-decoration: none;
-    background: red;
+    background: white;
     color: black;
     padding: 10px;
     margin-right: 5px;
     margin-top: 5px;
+    border: 1px solid black;
 }
 
 .nav-link-footer:hover{
     background: black;
-    color: red;
+    color: white;
     transition: 0.3s;
 }
 
-.nav-link:hover, .categoriesbouton:hover, .btn-btn-info:hover{
-    background: red;
+.nav-link:hover, .categoriesbouton:hover, .btn-btn-info:hover, .btn-btn-info-posts:hover{
+    background: white;
     color: black;
     transition: 0.3s;
+    border: 1px solid black;
 }
 
 .contenteditspacing{

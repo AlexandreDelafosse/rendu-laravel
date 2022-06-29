@@ -15,12 +15,13 @@
         @csrf
         <div class="contenteditspacing">
         {!! Form::label('title', 'Titre de l\'article') !!}
-        {!! Form::text('title', null, ['placeholder' => 'title post']) !!}
+        {!! Form::text('title', null, ['placeholder' => 'titre du post']) !!}
         </div>
         <div class="contenteditspacing">
         {!! Form::label('content', 'Contenu de l\'article') !!}
         {!! Form::textarea('content', null, ['placeholder' => 'contenu du post']) !!}
         </div>
+
         <div class="contenteditspacing">
         {!! Form::label('category', 'Categorie de l\'article') !!}
         <select name="category" id="category">
@@ -28,7 +29,9 @@
                 <option value="{{ $category->id }}"> {{ $category->title}} </option>
             @endforeach
         </select>
-        {!! Form::submit('Envoyer') !!}
+            <br>
+            <br>
+        {!! Form::submit('Créer votre article') !!}
         </div>
 {!! Form::close() !!}
 	
